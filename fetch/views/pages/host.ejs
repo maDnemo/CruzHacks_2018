@@ -9,29 +9,17 @@
         <script src="js/util/http.js" type="text/javascript"></script>
         <script src="js/host.js" type="text/javascript"></script>
 
-        <style>
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s;
-        width: 40%;
-        border-radius: 5px;
-    }
 
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    }
-
-    img {
-        border-radius: 5px 5px 0 0;
-    }
-
-    .container {
-        padding: 2px 16px;
-    }
-    </style>
 </head>
 
 <body>
+
+    <div class="card">
+        <h1 id="dsName" style="font: 'Georgia';" > </h1>
+        <h2 id="dpName" style="font: 'Georgia';" > </h2>
+        <p id="dd" style="font: 'Georgia';" > </p>
+    </div>
+
     <div id="credentials" style="display:none;" data="<%= credentials %>"></div>
     <div id="main" class="main-container">
         <div id="videoContainer" class="video-container">
@@ -40,15 +28,17 @@
     </div>
     <div class="broadcast-controls-container">
         <div class="rtmp-container">
-            <span id="rtmpLabel" style="font: 'Arial'; font-size: 26px; font-weight: bold; ">Enter a Stream Name! </span>
-            <span class="hidden error" id="rtmpError">The entered RTMP server and/or stream name are not valid. Please check the url and try again.</span>
+            <span id="rtmpLabel" style="font: 'Arial'; font-size: 26px; font-weight: bold; ">Enter a Stream Name and Name of Pet! </span>
+            <span class="hidden error" id="rtmpError">Must enter a name of the stream! </span>
             <span id="rtmpActive" class="hidden active">Your RTMP stream is active!</span>
             <div id="rtmpInputContainer" class="input-container" >
                 
-                <input id="rtmpStream" type="text" placeholder="myStreamName">
+                <input id="streamName" type="text" placeholder="StreamName">
+                <input id="petName" type="text" placeholder="PetName">
+                <textarea id="description" rows="4" cols="40" style="margin-left: auto; margin-right: auto" placeholder="Description" > </textarea>
             </div>
         </div>
-        <button id="startStop" class="btn-broadcast hidden">Start Broadcast</button>
+        <button onClick="dis()" id="startStop" class="btn-broadcast hidden">Start Broadcast</button>
         <div id="urlContainer" class="url-container hidden">
             <div id="broadcastURL" class="opacity-0 no-show"></div>
             <div id="copyURL"class="copy-link" data-clipboard-target="#broadcastURL">
@@ -61,6 +51,22 @@
         </div>
     </div>
 
+
+
 </body>
+
+<script>
+
+function dis() {
+    document.getElementById('dsName').innerHTML = document.getElementById('streamName').value;
+    document.getElementById('dpName').innerHTML = document.getElementById('petName').value;
+    document.getElementById('dd').innerHTML = document.getElementById('description').value;
+    localStorage.setItem('streamName', document.getElementById('dsName').innerHTML);
+    localStorage.setItem('petName', document.getElementById('dpName').innerHTML);
+    localStorage.setItem('description', document.getElementById('dd').innerHTML);
+
+}
+
+</script>
 
 </html>

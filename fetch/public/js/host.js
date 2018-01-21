@@ -109,11 +109,13 @@
   };
 
   var validRtmp = function () {
-    var stream = document.getElementById('rtmpStream');
+    var stream = document.getElementById('streamName');
+    var petName = document.getElementById('petName');
+    var description = document.getElementById('description');
 
     var streamDefined = !!stream.value;
-    var invalidServerMessage = 'The RTMP server url is invalid. Please update the value and try again.';
-    var invalidStreamMessage = 'The RTMP stream name must be defined. Please update the value and try again.';
+    var invalidServerMessage = 'Please enter a stream name and pet name!';
+    var invalidStreamMessage = 'Please enter a stream name and pet name!';
 
 
     if (!streamDefined) {
@@ -129,7 +131,7 @@
   };
 
   var hideRtmpInput = function () {
-    ['rtmpLabel', 'rtmpError', 'rtmpStream'].forEach(function (id) {
+    ['rtmpLabel', 'rtmpError', 'streamName', 'petName', 'description'].forEach(function (id) {
       document.getElementById(id).classList.add('hidden');
     });
   };

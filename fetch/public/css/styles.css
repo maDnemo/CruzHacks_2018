@@ -420,3 +420,24 @@ body {
     height: 0;
     width: 0;
 }
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background: #87cefa;
+    box-shadow: 0 0 0 1px #0099cc;
+    padding: 20px;
+    border: none;
+    border-width: 1px;
+    border-radius: 16px;
+    text-decoration: none;
+    border-style: solid;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
