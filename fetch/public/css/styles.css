@@ -1,11 +1,12 @@
 html,
 body {
-    background-image: url("DogPawBackGround.jpg");
+    background-image: url("DogPawBackground.jpg");
+    background-size: contain;
 }
 
 .main-container {
-    width: 900vw;
-    height: 200vh;
+    width: 95vw;
+    height: 90vh;
     margin: 0 auto;
     padding: 5px;
     border: 10px solid #00eeaa;
@@ -13,7 +14,7 @@ body {
 }
 
 .main-container.player {
-    min-height: 535px;
+    min-height: 90vh;
 }
 
 .video-wrap {
