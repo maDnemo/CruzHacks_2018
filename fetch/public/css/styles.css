@@ -1,7 +1,8 @@
 html,
 body {
     background-image: url("DogPawBackground.jpg");
-    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .main-container {
@@ -76,7 +77,7 @@ body {
     bottom: 20px;
     margin: 0 auto;
     opacity: 1;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Arial';
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5);
     width: 125px;
@@ -141,7 +142,7 @@ body {
 .banner .text {
     color: #0099cc;
     font-size: 34px;
-    font-family: 'Yellowtail', cursive;
+    font-family: 'Yellowtail';
     letter-spacing: 1px;
 }
 
@@ -221,7 +222,7 @@ body {
 
 .copy-link {
     position: relative;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Arial';
     color: #59c9e3;
     width: 200px;
     margin: 10px auto;
@@ -272,7 +273,7 @@ body {
     color: #59c9e3;
     background-color: #fff;
     border-radius: 4px;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Poiret One';
     width: 250px;
     height: 40px;
     top: -45px;
@@ -293,8 +294,57 @@ body {
     bottom: -16px;
 }
 
+.btn-redir {
+    font-family: 'Helvetica';
+    background-color: #0099cc;
+    box-shadow: 0 0 0 1px #0099cc;
+    color: #fff !important;
+    cursor: pointer;
+    font-size: 50px;
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    border: none;
+    border-width: 2px;
+    border-radius: 16px;
+    text-decoration: none;
+    border-style: solid;
+    -o-transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
+    -kthtml-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+.btn-redir span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn-redir span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btn-redir:hover span {
+  padding-right: 25px;
+}
+
+.btn-redir:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
 .btn-broadcast {
-    font-family: 'Poiret One', cursive;
+    font-family: 'Arial';
     background-color: #0099cc;
     box-shadow: 0 0 0 1px #0099cc;
     color: #fff !important;

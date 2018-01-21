@@ -109,22 +109,14 @@
   };
 
   var validRtmp = function () {
-    var server = document.getElementById('rtmpServer');
     var stream = document.getElementById('rtmpStream');
 
-    var serverDefined = !!server.value;
     var streamDefined = !!stream.value;
     var invalidServerMessage = 'The RTMP server url is invalid. Please update the value and try again.';
     var invalidStreamMessage = 'The RTMP stream name must be defined. Please update the value and try again.';
 
-    if (serverDefined && !server.checkValidity()) {
-      document.getElementById('rtmpLabel').classList.add('hidden');
-      document.getElementById('rtmpError').innerHTML = invalidServerMessage;
-      document.getElementById('rtmpError').classList.remove('hidden');
-      return null;
-    }
 
-    if (serverDefined && !streamDefined) {
+    if (!streamDefined) {
       document.getElementById('rtmpLabel').classList.add('hidden');
       document.getElementById('rtmpError').innerHTML = invalidStreamMessage;
       document.getElementById('rtmpError').classList.remove('hidden');
@@ -133,11 +125,11 @@
 
     document.getElementById('rtmpLabel').classList.remove('hidden');
     document.getElementById('rtmpError').classList.add('hidden');
-    return { serverUrl: server.value, streamName: stream.value };
+    return {  streamName: stream.value };
   };
 
   var hideRtmpInput = function () {
-    ['rtmpLabel', 'rtmpError', 'rtmpServer', 'rtmpStream'].forEach(function (id) {
+    ['rtmpLabel', 'rtmpError', 'rtmpStream'].forEach(function (id) {
       document.getElementById(id).classList.add('hidden');
     });
   };
