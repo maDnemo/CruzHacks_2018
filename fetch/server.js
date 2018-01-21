@@ -26,7 +26,17 @@ const broadcast = require('./services/broadcast-api');
  */
 
 app.get('/', (req, res) => {
-  res.redirect('/viewer');
+  res.redirect('/guest');
+  var viewRedir = document.getElementById('viewRedir');
+  var hostRedir = document.getElementById('hostRedir');
+
+  document.getElementById(viewRedir).onclick = () => {
+    res.redir('/viewer');
+  }
+  document.getElementById(hostRedir).onclick = () => {
+    res.redir('/host');
+  }
+
 });
 
 app.get('/viewer', (req, res) => {
