@@ -5,8 +5,8 @@
    * Options for adding OpenTok publisher and subscriber video elements
    */
   var insertOptions = {
-    width: '100%',
-    height: '100%',
+    width: '90vw',
+    height: '85vh',
     showControls: false
   };
 
