@@ -25,12 +25,27 @@
             <div id="hostDivider" class="hidden"></div>
         </div>
     </div>
+
+    <div id="holla" >
+        <button onclick="clickCounter()" type="button" class="button">Holla!</button>
+        <div id="hollar" class="hollar"></div>
+    </div>
+
 </body>
-
-<script>
-    
-v
-
+<script type="text/javascript">
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (sessionStorage.clickcount) {
+            sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+        } else {
+            sessionStorage.clickcount = 1;
+        }
+        document.getElementById("hollar").innerHTML = "Hollas " + sessionStorage.clickcount;
+    } else {
+        document.getElementById("hollar").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+}
 </script>
+
 
 </html>
